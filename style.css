@@ -5,7 +5,7 @@
 body{
     background-color:rgb(11, 1, 54) ;
     text-decoration: none;
-    height: 500%;
+    height: auto;
     color: white;
     width: 100%;
 }
@@ -212,13 +212,15 @@ body{
 /******************Event part*******************/
 #event{
     display: inline-block;
+    background-image: url(event-bg.jpg);
+    padding-bottom: 11%;
 }
-#event .event-background video{
+/*#event .event-background video{
     position: absolute;
     width: 100%;
     opacity: 15%;
     z-index: -1;
-}
+}*/
 #event h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 55px;
@@ -231,56 +233,64 @@ body{
 #event .content{
     float: left;
     margin-left: 2.7%;
+    margin-right: 10%;
+    margin-bottom: 3%;
     width: 40%;
 }
-#event .audi img{
-    width: 50%;
-    float: right;
-    margin-right: 2.7%;
-    border-radius: 30px;
-}
 #event .content img{
-    display: inline-block;
+    /*display: inline-block;*/
     width: 80%;
     padding: 5px;
     /*background-color:rgb(11, 1, 54) ;*/
     border-radius: 50px;
 }
 /*countdown timer*/
-#event .event-date{
-    /*float: left;*/
-    width: 31%;
+#event .content .event-date{
+    display: block;
     padding: 15px;
-    border: 7px solid cyan;
-    border-radius: 40px;
-    margin-left: 2.7%;
-    margin-bottom: 3%;
+    padding-right: 0px;
+    padding-top: 5px;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    width: 120%;
 }
-#event .event-date div{
+#event .content .event-date div{
     display: inline-block;
     padding: 10px;
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
-    color: rgb(8, 244, 244);
+    color: cyan;
     margin-right: 0%;
+    background-color: rgba(0, 0, 0, 0.41);
+    border-radius: 20px;
 }
-#event .event-date div p{
+#event .content .event-date div p{
     text-align: center;
 }
+#event .audi img{
+    width: 41%;
+    margin-bottom: 0%;
+    margin-left: 2.7%;
+    border-radius: 30px;
+}
 #event .event-description p{
-    width: 90%;
+    width: 95%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-align: left;
+    margin-top: 3%;
     margin-left: 2.7%;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.251);
 }
 
 /****************Gallery Part****************/
 #gallery{
-    margin-top: 11%;
+    /*margin-top: 11%;*/
     padding-bottom: 8%;
     background-color: rgb(2, 2, 80);
+    background-image: url();
 }
 #gallery h2{
     padding-top: 3%;
@@ -337,8 +347,9 @@ body{
 
 /********************Executive Part********************/
 #executives{
-    background-color:rgb(17, 6, 72) ;
+    background-color:rgb(15, 5, 60) ;
     padding-bottom: 5%;
+    background-image: url();
 }
 #executives h2{
     font-family: Arial, Helvetica, sans-serif;
@@ -388,6 +399,10 @@ body{
     padding-top: 2%;
 
 }*/
+#contact{
+    background-image: url(contact-bg.jpg);
+    padding-bottom: 5%;
+}
 #contact .services{
     width: 30%;
     display: inline-block;
@@ -421,6 +436,7 @@ body{
     padding-bottom: 5px;
     text-decoration: underline cyan;
     margin-bottom: 4%;
+    font-weight: bolder;
 }
 #contact .contacts table{
     font-family: Arial, Helvetica, sans-serif;
@@ -428,139 +444,18 @@ body{
 }
 #contact .contacts table tr td{
     padding: 7px;
-    height: 100px;
+    font-weight: bolder;
 }
 #contact .contacts table tr td span{
     color: cyan;
     font-size: 17px;
+    font-weight: bolder;
 }
 
 /******************Media Queries********************/
 /*For Home Section*/
 
-@media(max-width:1024px){
-    .logo{
-        z-index: 1;
-        position: absolute;
-        right: 2.7%;
-        top: 3.7%;
-        width: 9%;
-        float: right;
-    }
-    .navigation{
-        display: inline-block;
-        position: absolute;
-        top: 10.5%;
-        right: 10px;
-    }
-    .navigation a{
-        display: inline-block;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 90%;
-        color: white;
-        padding-bottom: 5px;
-        text-decoration: underline;
-    }
-    .contact{
-        display: inline-block;
-        position: absolute;
-        top: 5%;
-        right: 2.7%;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 80%;
-        color: rgb(11, 1, 54);
-        padding: 8px 5px;
-        text-decoration: none;
-        background-color: cyan;
-        border-left: 10px;
-        border-right: 10px;
-        border-radius: 16px;
-    }
-}
-@media(max-width:600px){
-    .logo{
-        z-index: 1;
-        position: absolute;
-        right: 2.7%;
-        top: 3.7%;
-        width: 9%;
-        float: right;
-    }
-    .navigation{
-        display: inline-block;
-        position: absolute;
-        top: 12.5%;
-        left: 10px;
-    }
-    .navigation a{
-        display: inline-block;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 70%;
-        color: white;
-        padding-bottom: 5px;
-        text-decoration: underline;
-    }
-    .contact{
-        display: inline-block;
-        position: absolute;
-        top: 5%;
-        right: 2.7%;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 60%;
-        color: rgb(11, 1, 54);
-        padding: 8px 5px;
-        text-decoration: none;
-        background-color: cyan;
-        border-left: 10px;
-        border-right: 10px;
-        border-radius: 16px;
-    }
-}
-@media(max-width:420px){
-    .logo{
-        z-index: 1;
-        position: absolute;
-        right: 2.7%;
-        top: 3.7%;
-        width: 9%;
-        float: right;
-    }
-    .navigation{
-        display: block;
-        position: absolute;
-        top: 7.5%;
-        left: 10px;
-    }
-    .navigation a{
-        display: block;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 60%;
-        color: white;
-        padding-bottom: 5px;
-        text-decoration: underline;
-    }
-    .contact{
-        display: inline-block;
-        position: absolute;
-        top: 4.5%;
-        right: 2.7%;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 50%;
-        color: rgb(11, 1, 54);
-        padding: 8px 5px;
-        text-decoration: none;
-        background-color: cyan;
-        border-left: 10px;
-        border-right: 10px;
-        border-radius: 16px;
-    }
-}
+
 
 /*For About Section*/
 
@@ -598,65 +493,71 @@ body{
 }
 
 /*For Event Section*/
-@media(max-width:1246px){
-    #event h2{
-        font-size: 45px;
-    }
-    #events .event-date{
-        width: 50%;
-    }
-    #events .event-date p,span{
-        font-size: 60%;
-    } 
-    #event .audi{
-        width: 100%;
-    }
-    #event .event-description p{
-        font-size: 20px;
-    }
-}
 @media(max-width:960px){
-    #event .event-background video{
-        display: none;
+    #event .content{
+        width: 50%;
+        margin-right: 0%;
+        margin-bottom: 0;
     }
-    #event h2{
-        font-size: 45px;
+    #event .content .event-date{
+        width: auto;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
-    #events .event-date p,span{
-        font-size: 40%;
-    } 
-    #event .audi{
-        width: 100%;
+    #event .content .event-date div{
+        font-size: 15px;
     }
-    #event .event-description p{
-        font-size: 100%;
-    }
-}
-@media(max-width:765px){
-    #event .event-background video{
-        display: none;
-    }
-    #event h2{
-        font-size: 45px;
-    }
-    #events .event-date p,span{
-        font-size: 27%;
-    } 
-    #event .audi{
-        width: 100%;
-    }
-    #event .event-description p{
-        font-size: 100%;
+    #event .event-description{
+        margin-top: 6%;
     }
 }
-@media(max-width:620px){
-    #event .event-background video{
-        display: none;
+@media(max-width:762px){
+    #event .content{
+        width: 70%;
+        float: none;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-bottom: 0%;
+        margin: 0 auto;
     }
     #event h2{
-        font-size: 45px;
+        font-size: 40px;
     }
-    
+    #event .content img{
+        width: 80%;
+        padding: 0;
+        margin: 0 auto;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #event .content .event-date{
+        width: 79%;
+        padding: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+        margin: 0 auto;
+    }
+    #event .content .event-date div{
+        font-size: 17px;
+    }
+    #event .content .event-date div span{
+        font-size: 13px;
+    }
+    #event .audi{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 4%;
+    }
+    #event .audi img{
+        width: 100%;
+        margin-left: 0;
+    }
+    #event .event-description{
+        margin-top: 6%;
+    }
 }
 
 /*For Gallery Section*/
@@ -673,6 +574,11 @@ body{
     }
     #gallery .pic-section img{
         border: 2px solid cyan;
+    }
+}
+@media(max-width:545px){
+    #gallery h2{
+        font-size: 45px;
     }
 }
 
@@ -718,16 +624,17 @@ body{
 }
 
 /*For Contact Us Section*/
-@media(max-width: 580px){
+@media(max-width: 830px){
     #contact .services{
-        width: 30%;
+        width: 90%;
         display: block;
         margin-left: 2.7%;
-        margin-top: 5%;
+        margin-top: 0%;
         margin-bottom: 5%;
+        padding-top: 5%;
     }
     #contact .contacts{
-        width: 40%;
+        width: 90%;
         float: none;
         margin-left: 2.7%;
         margin-right: 2.7%;

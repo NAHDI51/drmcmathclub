@@ -78,34 +78,35 @@
 <!--Starts Events Section-->  
 
     <div id="event">
-        <div class="event-background">
+        <!--<div class="event-background">
             <video src="event_back.mp4" autoplay muted loop></video> 
-        </div>
+        </div>-->
         <h2>Upcoming Event</h2>
         <div class="content">
             <img src="event_logo.png" alt="">
+        
+            <div class="event-date">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>   
         </div>
         <div class="audi">
             <img src="drmc_audi.jpg" alt="">
-        </div>
-        <div class="event-date">
-            <div>
-                <p id="days">00</p>
-                <span>Days</span>
-            </div>
-            <div>
-                <p id="hours">00</p>
-                <span>Hours</span>
-            </div>
-            <div>
-                <p id="minutes">00</p>
-                <span>Minutes</span>
-            </div>
-            <div>
-                <p id="seconds">00</p>
-                <span>Seconds</span>
-            </div>
-        </div>
+        </div> 
         <div class="event-description">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, quo porro culpa eligendi beatae exercitationem animi sed fugit dolorem cupiditate, omnis distinctio qui libero? Adipisci, corrupti esse eligendi facere, excepturi ipsam iste debitis perspiciatis voluptate aliquam porro ducimus eum sint! </p>
         </div>
@@ -223,14 +224,13 @@
 <script>
     var countDownDate = new Date("Mar 5, 2023 00:00:00").getTime();
     var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
 
-        var now      = new Date().getTime();  
-        var distance = countDownDate - now; 
-
-        var days     = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours    = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes  = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds  = Math.floor((distance % (1000 * 60)) / 1000);
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("days").innerHTML = days;
         document.getElementById("hours").innerHTML = hours;
@@ -256,6 +256,8 @@
     document.querySelector('.popup-image span').onclick = () =>{
         document.querySelector('.popup-image').style.display = 'none';
     }
+
+
 
 </script>    
 </body>
