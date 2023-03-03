@@ -7,22 +7,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--Starts Home Section-->
+
     <div id="home">
-        <div class="media">
-            <video src="intro.mp4" autoplay muted class="background1"></video>
-           <img src="logo.png" alt="" class="logo">
-        </div>
-        <div class="navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#event">Events</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#executives">Executive Panel</a>
-        </div>   
-            <a href="#contact" class="contact">Contact Us</a>
+        <nav class="navbar">
+            <div class="content">
+              <div class="logo"><a href="#">DR(MC)<sup>2</sup></a></div>
+              <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fa fa-fw fa-times"></i>
+                </div>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#event">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#executives">Executive Panel</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+              <div class="icon menu-btn">
+                <i class="fa fa-fw fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+          <div class="banner">
+            <p>DRMC <br>Math Club <br>
+            <span>-Numeros Regere Universi</span></p>
+          </div>
     </div>
 
 <!--Starts About Section-->
@@ -151,39 +166,39 @@
         <h2>Executive Panel</h2>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>President</span></p>
+            <p>Afif Siddique<br><span>President</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Vice President (Day)</span></p>
+            <p>Shahriyar Zaman<br><span>Vice President (Day)</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Vice President (Morning)</span></p>
+            <p>Abrar Fiaz<br><span>Vice President (Morning)</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>General Secretary</span></p>
+            <p>Arjon Rahman<br><span>General Secretary</span></p>
+        </div>
+        <div class="executive">
+            <img src="Executive-img/Tanveer.jpg" alt="">
+            <p>Syed Tanveer Islam<br><span>Joint Secretary</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Joint Secretary</span></p>
+            <p>Afiad Tajrian Zarif<br><span>Organizing Secretary</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Organizing Secretary</span></p>
+            <p>Md. Tanim-ul Bari Ishmam<br><span>Olympiad & Brain Games Secretary</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Olympiad & Brain Games Secretary</span></p>
+            <p>Azraf Aqil<br><span>Treasurer</span></p>
         </div>
         <div class="executive">
             <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Treasurer</span></p>
-        </div>
-        <div class="executive">
-            <img src="dummy.png" alt="">
-            <p>Executive Name<br><span>Treasurer</span></p>
+            <p>Tahmid Ijtihad<br><span>Public Relations Secretary</span></p>
         </div>
     </div>
 
@@ -226,6 +241,30 @@
 
 
 <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+
+
+
     var countDownDate = new Date("Mar 5, 2023 00:00:00").getTime();
     var x = setInterval(function(){
         var now = new Date().getTime();

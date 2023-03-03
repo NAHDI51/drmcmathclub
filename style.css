@@ -3,78 +3,104 @@
     text-decoration: none;
 }
 body{
-    background-color:rgb(11, 1, 54) ;
+    background-color: #0d1d5a; 
     text-decoration: none;
     height: auto;
     color: white;
     width: 100%;
-}
 
+}
 
 
 /******************Home part*******************/
-.background1{
+#home{
     width: 100%;
+    /*background-image: url(home-bg.jpg);*/
 }
-.logo{
-    position: absolute;
-    left: 2.7%;
-    top: 10%;
-    width: 9%;
+#home .content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
 }
-.navigation{
-    display: inline-block;
-    position: absolute;
-    top: 14.5%;
-    right: 12.8%;
+#home .navbar{
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    background-color: #0d1d5a;
+    transition: all 0.3s ease;
 }
-.navigation a{
-    /**border: 5px solid black;
-    border-radius: 10px;
-    background-color: rgba(17, 6, 27, 0.273);**/
-    font-weight: bold;
+#home .navbar.sticky{
+    padding: 10px 0;
+    background-color: #010d3a;
+}
+#home .navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#home .navbar .logo a{
+    color: cyan;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 120%;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+#home .menu-list{
+    display: inline-flex;
+}
+#home .menu-list li{
+    list-style: none;
+}
+#home .menu-list li a{
     color: white;
-    padding: 15px 10px;
-    margin-left: 12px;
-    margin-right: 12px;
-    text-decoration: underline;
-}
-.navigation a:hover{
-    background-color:cyan;
-    color:rgb(11, 1, 54) ;
-    border-radius: 16px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.contact{
-    display: inline-block;
-    position: absolute;
-    top: 12.5%;
-    right: 2.7%;
-    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 120%;
-    color: rgb(11, 1, 54);
-    padding: 15px 10px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 25px;
     text-decoration: none;
-    background-color: cyan;
-    border-left: 10px;
-    border-right: 10px;
-    border-radius: 16px;
+    transition: all 0.3s ease;
 }
-.contact:hover{
-    background-color: white;
-    color:rgb(11, 1, 54) ;
-    transition: .5s;
+#home .menu-list li a:hover{
+    color: cyan;
 }
+#home .banner{
+    height: 100vh;
+    background: url("home-bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#home .banner p{
+    padding-top: 18%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 90px;
+    text-align: center;
+}
+#home .banner p span{
+    font-size: 20px;
+}
+.icon{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+}
+.icon.cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
 
 /******************About part*******************/
 
 #about{
     text-decoration: none;
     margin-bottom: 8%;
+    background-image: url();
 }
 /*About club part*/
 #about .media img{
@@ -290,7 +316,7 @@ body{
     /*margin-top: 11%;*/
     padding-bottom: 8%;
     background-color: rgb(2, 2, 80);
-    background-image: url();
+    background-image: url(gallery-bg.jpg);
 }
 #gallery h2{
     padding-top: 3%;
@@ -361,7 +387,7 @@ body{
 }
 #executives .executive{
     display: inline-block;
-    width: 20%;
+    width: 28%;
     margin: 0 auto;
     margin-left: 2.7%;
     margin-top: 4%;
@@ -369,9 +395,10 @@ body{
 }
 #executives .executive img{
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     border-radius: 20px;
     margin-bottom: 15px;
+    border: 5px solid black;
 }
 #executives .executive img:hover{
     padding-bottom: 0;
@@ -380,12 +407,12 @@ body{
 }
 #executives .executive p{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
+    font-size: 120%;
     align-items: center;
     font-weight: bold;
 }
 #executives .executive span{
-    font-size: 70%;
+    font-size: 80%;
     font-weight: normal;
 }
 /***********************Contact Part**********************/
@@ -454,11 +481,57 @@ body{
 
 /******************Media Queries********************/
 /*For Home Section*/
-
+@media(max-width:1000px){
+    #home .navigation ul li a{
+        padding-left: 10px;
+    }
+}
+@media(max-width:900px){
+    #home .navigation ul li a{
+        padding-left: 7px;
+        font-size: 17px;
+    }
+}
+@media (max-width: 896px) {
+    .icon{
+        display: block;
+    }
+    .icon.hide{
+        display: none;
+    }
+    #home .navbar .menu-list{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background: rgb(35, 34, 34);
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    #home .navbar .menu-list.active{
+        left: -0%;
+    }
+    #home .navbar .menu-list li{
+        margin-top: 45px;
+    }
+    #home .navbar .menu-list li a{
+        font-size: 23px;
+    }
+    #home .banner p{
+        padding-top: 250px;
+        font-size: 75px;
+    }
+    #home .banner p span{
+        font-size: 25px;
+    }
+  }
 
 
 /*For About Section*/
-
 @media(max-width: 1024px){
     #about .coordinator-sir{
         width: 90%;
@@ -473,7 +546,43 @@ body{
     }
 }
 @media(max-width: 600px){
-
+    #about .media{
+        width: 80%;
+        margin-left: 2.7%;
+        margin-top: 5%;
+    }
+    #about .media img{
+        width: 80%;
+        margin-top: 0%;
+        margin-left: 0%;
+        padding: 15px;
+        border: 10px solid cyan;
+        border-radius: 25px;
+        float: none;
+    }
+    #about h2{
+        font-size: 40px;
+    }
+    #about .abt-club{
+        width: 90%;
+        margin-left: 2.7%;
+        font-size: 17px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #about .principal-img{
+        width: 60%;
+        margin-top: 4% ;
+        margin-left: 2.7%;
+        margin-right: 2.7%;
+        margin-bottom: 2%;
+        float: none;
+        padding: 25px;
+        border: 10px solid cyan;
+        border-radius: 18px;
+    }
+    #about .principal-img img{
+        width: 100%;
+    }
     #about .coordinator-sir{
         width: 90%;
         display: block;
@@ -587,6 +696,9 @@ body{
     #executives h2{
         font-size: 45px;
     }
+    #executives .executive{
+        width: 28%;
+    }
     #executives .executive p{
         font-size: 100%;
     }
@@ -599,7 +711,7 @@ body{
         font-size: 40px;
     }
     #executives .executive{
-        width: 28%;
+        width: 44%;
     }
     #executives .executive p{
         font-size: 100%;
@@ -613,13 +725,13 @@ body{
         font-size: 35px;
     }
     #executives .executive{
-        width: 44%;
+        width: 90%;
     }
     #executives .executive p{
-        font-size: 100%;
+        font-size: 120%;
     }
     #executives .executive span{
-        font-size: 60%;
+        font-size: 90%;
     }
 }
 
