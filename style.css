@@ -41,10 +41,11 @@ body{
 }
 #home .navbar .logo a{
     color: cyan;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 600;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    display: none;
 }
 #home .menu-list{
     display: inline-flex;
@@ -57,12 +58,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     font-weight: 500;
-    margin-left: 25px;
+    padding: 10px 17px 10px 17px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 #home .menu-list li a:hover{
     color: cyan;
+    background-color: black;
+    transition: 0.3s;
+    border-radius: 20px;
 }
 #home .banner{
     height: 100vh;
@@ -93,7 +97,14 @@ body{
     right: 30px;
     top: 20px;
   }
+#home img{
+    position: absolute;
+    width: 9%;
+    top: 12%;
+    left: 2.7%;
+    z-index: 0;
 
+}
 
 /******************About part*******************/
 
@@ -527,6 +538,9 @@ body{
     }
     #home .banner p span{
         font-size: 25px;
+    }
+    #home img{
+        width: 15%;
     }
   }
 
